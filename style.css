@@ -165,7 +165,7 @@ p {
    Hero Sections
    ====================== */
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), #388e3c;
     color: #fff;
     height: 80vh;
     display: flex;
@@ -190,7 +190,7 @@ p {
 }
 
 .page-hero-section {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), var(--bg-image) no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), #388e3c;
     color: #fff;
     padding: 100px 0;
     text-align: center;
@@ -369,6 +369,219 @@ section {
 }
 
 /* ======================
+   Content Sections (About, Services, etc.)
+   ====================== */
+.content-section {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.content-section h2,
+.content-section h3,
+.content-section h4 {
+    color: #333;
+}
+
+.content-section p {
+    color: #555;
+}
+
+.dark-section {
+    background: #f9f9f9;
+}
+
+.dark-section h2,
+.dark-section h3,
+.dark-section h4 {
+    color: #333;
+}
+
+.dark-section p {
+    color: #555;
+}
+
+/* ======================
+   Portfolio Grid Layout
+   ====================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 40px 0;
+}
+
+/* Portfolio item enhancements */
+.portfolio-item {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+}
+
+/* Project thumbnails with different colors */
+.project-thumbnail {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.project-alpha {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.project-beta {
+    background: linear-gradient(135deg, #f83600 0%, #f9d423 100%);
+}
+
+.project-gamma {
+    background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);
+}
+
+.project-delta {
+    background: linear-gradient(135deg, #c471f5 0%, #fa71cd 100%);
+}
+
+.project-epsilon {
+    background: linear-gradient(135deg, #5d4157 0%, #a8caba 100%);
+}
+
+.project-zeta {
+    background: linear-gradient(135deg, #3494E6 0%, #EC6EAD 100%);
+}
+
+.portfolio-item-content {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-item-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.portfolio-item-content p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.portfolio-item-content .button {
+    margin-top: auto;
+}
+
+/* ======================
+   Modal Styles
+   ====================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    animation: modalFade 0.3s;
+}
+
+@keyframes modalFade {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #388e3c;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.modal-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.modal-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.modal-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.modal-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.modal-details h3 {
+    color: #388e3c;
+    margin-bottom: 15px;
+}
+
+.project-features {
+    margin: 15px 0;
+}
+
+.project-features li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.project-features i {
+    color: #388e3c;
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
+/* ======================
    Footer
    ====================== */
 .main-footer {
@@ -465,6 +678,12 @@ section {
 /* ======================
    Responsive Styles
    ====================== */
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .main-header .container {
         flex-direction: column;
@@ -492,6 +711,14 @@ section {
     .service-cards-container,
     .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .modal-body {
+        flex-direction: column;
+    }
+    
+    .modal-image, .modal-details {
+        min-width: 100%;
     }
 }
 
