@@ -179,6 +179,149 @@
     </footer>
 
     <script>
+
+
+
+
+
+
+document.getElementById("current-year").textContent = new Date().getFullYear();
+
+// Project data
+const projects = {
+    1: {
+        title: "E-commerce Platform",
+        colorClass: "project-alpha",
+        iconClass: "fas fa-shopping-cart",
+        description: "Developed a robust e-commerce site with custom features and a seamless user experience. This platform includes advanced product filtering, secure payment processing, inventory management, and a responsive design that works across all devices.",
+        features: [
+            "Advanced product catalog with filtering",
+            "Secure payment gateway integration",
+            "Inventory management system",
+            "Responsive design for all devices",
+            "User account and order history"
+        ],
+        technologies: "React.js, Node.js, MongoDB, Stripe API, AWS"
+    },
+    2: {
+        title: "Mobile Social App",
+        colorClass: "project-beta",
+        iconClass: "fas fa-mobile-alt",
+        description: "Launched a social networking app with real-time messaging and media sharing capabilities. The app allows users to connect with friends, share photos and videos, join groups, and discover events in their area.",
+        features: [
+            "Real-time messaging and notifications",
+            "Photo and video sharing",
+            "User profiles and friend connections",
+            "Group creation and event planning",
+            "Location-based features"
+        ],
+        technologies: "React Native, Firebase, Node.js, MongoDB"
+    },
+    3: {
+        title: "Business Dashboard",
+        colorClass: "project-gamma",
+        iconClass: "fas fa-chart-line",
+        description: "Created a data-rich dashboard to help a client visualize key performance metrics. This interactive dashboard provides real-time insights into sales, customer behavior, and operational efficiency with customizable reports.",
+        features: [
+            "Interactive data visualizations",
+            "Real-time metrics and analytics",
+            "Customizable reporting",
+            "User access controls",
+            "Export functionality for reports"
+        ],
+        technologies: "Vue.js, D3.js, Python, PostgreSQL, Chart.js"
+    },
+    4: {
+        title: "Corporate Web Portal",
+        colorClass: "project-delta",
+        iconClass: "fas fa-building",
+        description: "Designed and built a secure and scalable corporate portal for internal communication. This portal streamlines company communications, document sharing, and project collaboration for distributed teams.",
+        features: [
+            "Secure employee authentication",
+            "Document management system",
+            "Internal messaging and announcements",
+            "Project collaboration tools",
+            "Department-specific workspaces"
+        ],
+        technologies: "Angular, .NET Core, SQL Server, Azure AD, SharePoint"
+    },
+    5: {
+        title: "AI-Powered Chatbot",
+        colorClass: "project-epsilon",
+        iconClass: "fas fa-robot",
+        description: "Integrated an intelligent, AI-driven chatbot solution for customer service. This chatbot handles common customer inquiries, provides product recommendations, and escalates complex issues to human agents when needed.",
+        features: [
+            "Natural language processing",
+            "Contextual conversation memory",
+            "Integration with knowledge base",
+            "Seamless handoff to human agents",
+            "Multi-language support"
+        ],
+        technologies: "Python, TensorFlow, Dialogflow, Node.js, MongoDB"
+    },
+    6: {
+        title: "Interactive Learning Portal",
+        colorClass: "project-zeta",
+        iconClass: "fas fa-graduation-cap",
+        description: "Developed an engaging educational platform with advanced user management features. This portal offers courses, quizzes, progress tracking, and certification for both students and instructors.",
+        features: [
+            "Course management system",
+            "Interactive quizzes and assessments",
+            "Progress tracking and certificates",
+            "Instructor dashboards",
+            "Discussion forums and peer interaction"
+        ],
+        technologies: "React.js, Laravel, MySQL, WebRTC, Redis"
+    }
+};
+
+// Modal functionality
+const modal = document.getElementById("projectModal");
+const closeBtn = document.querySelector(".close-modal");
+const viewDetailsButtons = document.querySelectorAll(".view-details");
+const modalThumbnail = document.getElementById("modalThumbnail");
+const modalIcon = document.getElementById("modalIcon");
+
+// Open modal when a view details button is clicked
+viewDetailsButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        const projectId = this.getAttribute("data-project");
+        const project = projects[projectId];
+        
+        if (project) {
+            document.getElementById("modalTitle").textContent = project.title;
+            document.getElementById("modalDescription").textContent = project.description;
+            document.getElementById("modalTechnologies").textContent = project.technologies;
+            
+            // Update modal thumbnail color and icon
+            modalThumbnail.className = "project-thumbnail " + project.colorClass;
+            modalIcon.className = project.iconClass;
+            
+            // Clear and populate features list
+            const featuresList = document.getElementById("modalFeatures");
+            featuresList.innerHTML = "";
+            project.features.forEach(feature => {
+                const li = document.createElement("li");
+                li.innerHTML = `<i class="fas fa-check-circle"></i> ${feature}`;
+                featuresList.appendChild(li);
+            });
+            
+            modal.style.display = "block";
+        }
+    });
+});
+
+// Close modal when the close button is clicked
+closeBtn.addEventListener("click", function() {
+    modal.style.display = "none";
+});
+
+// Close modal when clicking outside the modal content
+window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
         // JavaScript code will go here
     </script>
 </body>
