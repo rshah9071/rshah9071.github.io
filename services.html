@@ -3,15 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Hassan associates</title>
+    <title>Our Services - Hassan Associates</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-detail {
+            margin: 60px 0;
+            padding: 40px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .service-detail h3 {
+            color: #388e3c;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .service-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .service-feature i {
+            color: #388e3c;
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+        
+        .technology-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .technology-tag {
+            background: #f0f7f0;
+            color: #388e3c;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #388e3c;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #388e3c;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .process-step:not(:last-child)::after {
+                content: '↓';
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                display: block;
+                margin: 15px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-
     <header class="main-header">
         <div class="container">
-            <h1 class="logo">Hassan associates</h1>
+            <div class="logo">Hassan Associates</div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -24,109 +132,252 @@
         </div>
     </header>
 
-    <main>
-        <section class="page-hero-section" style="background-image: url('images/services-hero-bg.jpg');">
-            <div class="container">
-                <h2>Our Comprehensive Services</h2>
-                <p>Delivering strategic IT solutions designed to meet your business challenges and drive innovation.</p>
-            </div>
-        </section>
-        <section id="custom-software" class="service-detail-section">
-            <div class="container">
-                <div class="service-detail-content">
-                    <h3>Custom Software Development</h3>
-                    <p>
-                        We create bespoke software solutions tailored to your unique business processes and goals. Our agile approach ensures your project is delivered on time, within budget, and to the highest quality standards.
-                    </p>
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Scalable and robust architecture</li>
-                        <li><i class="fas fa-check-circle"></i> Seamless third-party integrations</li>
-                        <li><i class="fas fa-check-circle"></i> Ongoing maintenance and support</li>
-                    </ul>
-                    <a href="contact.html" class="button">Start a Project</a>
+    <section class="page-hero-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>Comprehensive IT solutions tailored to your business needs</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>What We Offer</h2>
+            <p class="subtitle">Professional services to transform your business</p>
+            
+            <div id="web-development" class="service-detail">
+                <h3>Web Development</h3>
+                <p>We create responsive, user-friendly websites and web applications using the latest technologies. Our solutions are optimized for performance, security, and scalability.</p>
+                
+                <div class="service-features">
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Custom Web Applications</h4>
+                            <p>Tailored solutions built to your specific requirements</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>E-commerce Solutions</h4>
+                            <p>Online stores with secure payment processing</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Content Management Systems</h4>
+                            <p>Easy-to-update websites with admin panels</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>API Development & Integration</h4>
+                            <p>Connect your systems with third-party services</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="web-development" class="service-detail-section even">
-            <div class="container">
-                <div class="service-detail-content">
-                    <h3>Web Development</h3>
-                    <p>
-                        From dynamic corporate websites to complex e-commerce platforms, we build fast, secure, and user-friendly web solutions that captivate your audience and drive engagement.
-                    </p>
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Responsive design for all devices</li>
-                        <li><i class="fas fa-check-circle"></i> SEO optimization to increase visibility</li>
-                        <li><i class="fas fa-check-circle"></i> Content management systems (CMS)</li>
-                    </ul>
-                    <a href="contact.html" class="button">Request a Demo</a>
+                
+                <h4>Technologies We Use:</h4>
+                <div class="technology-list">
+                    <span class="technology-tag">HTML5/CSS3</span>
+                    <span class="technology-tag">JavaScript</span>
+                    <span class="technology-tag">React.js</span>
+                    <span class="technology-tag">Node.js</span>
+                    <span class="technology-tag">Python/Django</span>
+                    <span class="technology-tag">PHP/Laravel</span>
                 </div>
-            </div>
-        </section>
-        <section id="mobile-apps" class="service-detail-section">
-            <div class="container">
-                <div class="service-detail-content">
-                    <h3>Mobile App Development</h3>
-                    <p>
-                        We design and build native and cross-platform mobile applications for iOS and Android, focusing on creating seamless user experiences that keep your users coming back.
-                    </p>
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Intuitive and engaging UI/UX design</li>
-                        <li><i class="fas fa-check-circle"></i> High performance and reliability</li>
-                        <li><i class="fas fa-check-circle"></i> App store deployment and support</li>
-                    </ul>
-                    <a href="contact.html" class="button">Get a Quote</a>
+                
+                <h4>Our Development Process:</h4>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Discovery</h4>
+                        <p>Understanding your requirements and goals</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Design</h4>
+                        <p>Creating wireframes and prototypes</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Development</h4>
+                        <p>Building your solution with agile methodology</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Deployment</h4>
+                        <p>Launching and maintaining your application</p>
+                    </div>
                 </div>
+                
+                <a href="contact.html" class="button">Get a Quote</a>
             </div>
-        </section>
-        <section id="cloud-solutions" class="service-detail-section even">
-            <div class="container">
-                <div class="service-detail-content">
-                    <h3>Cloud Solutions</h3>
-                    <p>
-                        Migrate to the cloud or optimize your existing cloud infrastructure with our expert services. We help you leverage cloud technology for scalability, security, and cost-efficiency.
-                    </p>
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> AWS, Azure, and Google Cloud services</li>
-                        <li><i class="fas fa-check-circle"></i> Cloud migration and management</li>
-                        <li><i class="fas fa-check-circle"></i> Data storage and backup solutions</li>
-                    </ul>
-                    <a href="contact.html" class="button">Schedule a Call</a>
+            
+            <div id="mobile-apps" class="service-detail">
+                <h3>Mobile App Development</h3>
+                <p>We create native and cross-platform mobile applications for iOS and Android that deliver seamless experiences across all devices.</p>
+                
+                <div class="service-features">
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>iOS App Development</h4>
+                            <p>Native apps built with Swift for Apple devices</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Android App Development</h4>
+                            <p>Native apps built with Kotlin for Android devices</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Cross-Platform Solutions</h4>
+                            <p>Apps that work on both iOS and Android</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>UI/UX Design</h4>
+                            <p>Intuitive interfaces with exceptional user experience</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section id="it-consulting" class="service-detail-section">
-            <div class="container">
-                <div class="service-detail-content">
-                    <h3>IT Consulting & Strategy</h3>
-                    <p>
-                        Our consultants provide strategic advice to help you navigate the complex IT landscape. We work with you to develop a technology roadmap that aligns with your business objectives.
-                    </p>
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Technology stack recommendations</li>
-                        <li><i class="fas fa-check-circle"></i> Digital transformation strategies</li>
-                        <li><i class="fas fa-check-circle"></i> Security and compliance audits</li>
-                    </ul>
-                    <a href="contact.html" class="button">Consult with an Expert</a>
+                
+                <h4>Technologies We Use:</h4>
+                <div class="technology-list">
+                    <span class="technology-tag">Swift</span>
+                    <span class="technology-tag">Kotlin</span>
+                    <span class="technology-tag">React Native</span>
+                    <span class="technology-tag">Flutter</span>
+                    <span class="technology-tag">Firebase</span>
+                    <span class="technology-tag">Xcode</span>
                 </div>
+                
+                <a href="contact.html" class="button">Get a Quote</a>
             </div>
-        </section>
-    </main>
+            
+            <div id="cloud-solutions" class="service-detail">
+                <h3>Cloud Solutions</h3>
+                <p>We provide secure and scalable cloud infrastructure services including migration, deployment, and management of cloud resources.</p>
+                
+                <div class="service-features">
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Cloud Migration</h4>
+                            <p>Seamless transition to cloud infrastructure</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Server Management</h4>
+                            <p>24/7 monitoring and maintenance of your servers</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Database Management</h4>
+                            <p>Optimized database solutions for performance</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Disaster Recovery</h4>
+                            <p>Backup solutions and recovery plans</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4>Technologies We Use:</h4>
+                <div class="technology-list">
+                    <span class="technology-tag">AWS</span>
+                    <span class="technology-tag">Azure</span>
+                    <span class="technology-tag">Google Cloud</span>
+                    <span class="technology-tag">Docker</span>
+                    <span class="technology-tag">Kubernetes</span>
+                    <span class="technology-tag">Terraform</span>
+                </div>
+                
+                <a href="contact.html" class="button">Get a Quote</a>
+            </div>
+            
+            <div id="ai-ml" class="service-detail">
+                <h3>AI & Machine Learning</h3>
+                <p>We implement intelligent systems to automate processes, gain valuable insights from your data, and create AI-powered solutions.</p>
+                
+                <div class="service-features">
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Predictive Analytics</h4>
+                            <p>Forecast trends and make data-driven decisions</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Natural Language Processing</h4>
+                            <p>Chatbots and text analysis solutions</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Computer Vision</h4>
+                            <p>Image and video analysis applications</p>
+                        </div>
+                    </div>
+                    <div class="service-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Recommendation Systems</h4>
+                            <p>Personalized content and product recommendations</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4>Technologies We Use:</h4>
+                <div class="technology-list">
+                    <span class="technology-tag">Python</span>
+                    <span class="technology-tag">TensorFlow</span>
+                    <span class="technology-tag">PyTorch</span>
+                    <span class="technology-tag">scikit-learn</span>
+                    <span class="technology-tag">OpenCV</span>
+                    <span class="technology-tag">NLTK</span>
+                </div>
+                
+                <a href="contact.html" class="button">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Contact us today to discuss how our services can help your business grow and succeed in the digital world.</p>
+            <a href="contact.html" class="button">Get Started Now</a>
+        </div>
+    </section>
 
     <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <h3>About Hassan associates</h3>
-                    <p>
-                        Hassan associates is dedicated to delivering innovative IT solutions that empower businesses. We focus on cutting-edge technology and building lasting partnerships.
-                    </p>
+                    <h3>Hassan Associates</h3>
+                    <p>We provide innovative IT solutions to help businesses grow and succeed in the digital age.</p>
                 </div>
+                
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
@@ -137,25 +388,28 @@
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-contact">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> , Lahore, Pakistan</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:srh.61associates@gmail.com">srh.61associates@gmail.com</a></p>
-                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+92">+92 </a></p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+923001234567">+92 300 1234567</a></p>
+                    
                     <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Hassan associates. All rights reserved.</p>
+                <p>&copy; <span id="current-year"></span> Hassan Associates. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script>
         document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
